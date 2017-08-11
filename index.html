@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/index.css">
+	<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="js/nav.js"></script>
+</head>
+<body>
+	<div class="top">banner</div>
+	<div class="floor1">floor1</div>
+	<div class="floor2">floor2</div>
+	<div class="floor3">floor3</div>
+	<div class="floor4">floor4</div>
+	<div class="footer">footer</div>
+
+	<div class="left-nav">
+		<ul class="nav-ul">
+			<li>floor1</li>
+			<li>floor2</li>
+			<li>floor3</li>
+			<li>floor4</li>
+			<li class="toTop">回到顶部</li>
+		</ul>
+	</div>
+
+
+	<script>
+		var nav = new ElevatorNav({
+		    floorClass: ['floor1','floor2','floor3','floor4'],
+		    NavClass: "nav-ul li",
+		    activeClass: "active",
+		    toTopClass: "toTop",
+		    isRemoveAnimation: true,
+		    autoHidden: true,
+		    NavDivClass: "left-nav",
+		    speed: 500,
+		    DiyFun: function(){
+		    	console.log('自定义方法');
+		    }
+		})
+	</script>
+</body>
+</html>

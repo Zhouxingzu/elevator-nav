@@ -24,7 +24,7 @@ var nav = new ElevatorNav({
 参数 | 描述
 ----|---
 floorClass | 对应DIV楼层的class名
-NavClass | 导航菜单的class名，如<li class="nav-li"></li>
+NavClass | 导航菜单的class名
 activeClass | 当前楼层需要高亮显示的class名
 toTopClass | 回到顶部按钮的class名
 isRemoveAnimation | 是否移除类名随点击跟着跑的效果，默认为false

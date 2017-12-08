@@ -43,12 +43,17 @@ ElevatorNav.prototype = {
     statusChange: function(){
         var that = this;
         var windowScrollTop = $(window).scrollTop();
-        for(let j=0; j<that.floor.length; j++){
+        var NavDiv = $('.'+that.NavDivClass);
+        var NavLi = $('.'+that.NavClass);
+        for(var j=0; j<that.floor.length; j++){
             if(windowScrollTop >= that.floor[j]){
-                $('.'+that.NavClass).removeClass(that.activeClass);
-                $('.'+that.NavClass).eq(j).addClass(that.activeClass);
+                //如果有多个相同导航
+                for(var k=0; k<NavDiv.length; k++){
+                    $(NavDiv[k]).find(NavLi).removeClass(that.activeClass);
+                    $(NavDiv[k]).find(NavLi).eq(j).addClass(that.activeClass);
+                }
             }
-        }
+        };
     },
 
     //点击跳转对应楼层

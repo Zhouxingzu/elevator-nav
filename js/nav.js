@@ -1,6 +1,6 @@
 /***电梯导航定位***/
 
-function ElevatorNav(obj){
+function ElevatorNav(obj) {
     this.floorClass = obj.floorClass;
     this.NavClass = obj.NavClass;
     this.NavDivClass = obj.NavDivClass;
@@ -11,8 +11,8 @@ function ElevatorNav(obj){
     this.isAdapt = obj.isAdapt || false;
     this.autoHidden = obj.autoHidden || false;
     this.floor = [];
-    for(let i=0; i<this.floorClass.length; i++){
-        this.floor[i] = $('.'+this.floorClass[i]).offset().top-100;
+    for(let i = 0; i < this.floorClass.length; i++) {
+        this.floor[i] = $('.' + this.floorClass[i]).offset().top - 100;
     }
     this.DiyFun = obj.DiyFun;
     this.init();
@@ -22,106 +22,105 @@ ElevatorNav.prototype = {
     constructor: ElevatorNav,
 
     //初始化
-    init: function(){
+    init: function() {
         var me = this;
         me.statusChange();
-        $(window).scroll(function(){
-            me.statusChange()
+        $(window).scroll(function() {
+            me.statusChange();
         });
-        me.Jump(me.NavClass,me.activeClass,me.speed);
+        me.Jump(me.NavClass, me.activeClass, me.speed);
         me.BackToTop();
         me.ShowNav();
         me.DiyFun();
     },
 
     //获取各楼层高度
-    floorHieght: function(floorClass){
-        return $('.'+floorClass).offset().top-100;
+    floorHieght: function(floorClass) {
+        return $('.' + floorClass).offset().top - 100;
     },
 
     //左侧导航样式随定位变化
-    statusChange: function(){
+    statusChange: function() {
         var that = this;
         var windowScrollTop = $(window).scrollTop();
-        var NavDiv = $('.'+that.NavDivClass);
-        var NavLi = $('.'+that.NavClass);
-        for(var j=0; j<that.floor.length; j++){
-            if(windowScrollTop >= that.floor[j]){
+        var NavDiv = $('.' + that.NavDivClass);
+        var NavLi = $('.' + that.NavClass);
+        for(var j = 0; j < that.floor.length; j++) {
+            if(windowScrollTop >= that.floor[j]) {
                 //如果有多个相同导航
-                for(var k=0; k<NavDiv.length; k++){
+                for(var k = 0; k < NavDiv.length; k++) {
                     $(NavDiv[k]).find(NavLi).removeClass(that.activeClass);
                     $(NavDiv[k]).find(NavLi).eq(j).addClass(that.activeClass);
                 }
             }
-        };
+        }
     },
 
     //点击跳转对应楼层
-    Jump: function(NavClass,activeClass,speed){
+    Jump: function(NavClass, activeClass, speed) {
         var that = this;
-        $('.'+NavClass).click(function(event) {
+        $('.' + NavClass).click(function() {
 
             //如果这是回到顶部的按钮，则什么都不做
-            if($(this).hasClass(that.toTopClass)){
-
+            if($(this).hasClass(that.toTopClass)) {
+                return;
             }
-            else{
-              if(that.isRemoveAnimation == true){
-                    //在动画运动的过程中，不希望active-yellow特殊类名跟着满世界跑
-                    $(window).off('scroll', that.statusChange());
-                    //因为你解绑了检测事件，当前这个LI具备特殊类名还要再书写一次
-                    $(this).addClass(activeClass).siblings().removeClass(activeClass);  
-                }
+            if(that.isRemoveAnimation == true) {
+                //在动画运动的过程中，不希望active-yellow特殊类名跟着满世界跑
+                $(window).off('scroll', that.statusChange());
+                //因为你解绑了检测事件，当前这个LI具备特殊类名还要再书写一次
+                $(this).addClass(activeClass).siblings().removeClass(activeClass);  
+            }
                 
-                //需要知道现在要往几层楼跳
-                var i=$(this).index();
-                for(let j=0; j<that.floorClass.length; j++){
-                    if(i==j){
-                        $('html,body').stop().animate({'scrollTop':that.floor[j]+100}, speed,function(){
-                            $(window).scroll(function(){that.statusChange()});
-                            that.ShowNav();
-                        });
-                    }
-                }  
-            }
+            //需要知道现在要往几层楼跳
+            var i = $(this).index();
+            for(let j = 0; j < that.floorClass.length; j++) {
+                if(i == j) {
+                    $('html,body').stop().animate({'scrollTop': that.floor[j] + 100}, speed, function() {
+                        $(window).scroll(function(){that.statusChange()});
+                        // $('.ipr-content').on('scroll', that.statusChange());
+                        that.ShowNav();
+                    });
+                }
+            }  
         });
     },
 
     //回到顶部按钮
-    BackToTop: function(){
+    BackToTop: function() {
         var that = this;
-        $('.'+that.toTopClass).on('click', function () {
-          $('html, body').animate({scrollTop : 0}, that.speed);
+        $('.' + that.toTopClass).on('click', function () {
+            $('html, body').animate({scrollTop: 0}, that.speed);
         });
     },
 
     //导航自适应
-    Adapt: function(){
+    Adapt: function() {
 
     },
 
     //滑到一定位置出现左侧导航
-    ShowNav: function(){
+    ShowNav: function() {
         var that = this;
-        f1Top = that.floor[0];
-        if(that.autoHidden == true){
+        var f1Top = that.floor[0];
+        if(that.autoHidden == true) {
             if ($(window).scrollTop() >= f1Top) {
-                $('.'+that.NavDivClass).show();
+                $('.' + that.NavDivClass).show();
             } else {
-                $('.'+that.NavDivClass).hide();
+                $('.' + that.NavDivClass).hide();
             }
             $(window).scroll(function () {
-              if ($(window).scrollTop() >= f1Top) {
-                $('.'+that.NavDivClass).show();
-              } else {
-                $('.'+that.NavDivClass).hide();
-              }
-            })  
+                if ($(window).scrollTop() >= f1Top) {
+                    $('.' + that.NavDivClass).show();
+                } else {
+                    $('.' + that.NavDivClass).hide();
+                }
+            });
         }
     }
-}
+};
 
-
+module.exports = ElevatorNav;
 
 
 

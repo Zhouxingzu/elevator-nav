@@ -21,17 +21,18 @@ var nav = new ElevatorNav({
 </script>
 ```
 #### 三、详细API文档说明
-参数 | 描述
-----|---
-floorClass | 对应DIV楼层的class名
-NavClass | 导航菜单的class名
-activeClass | 当前楼层需要高亮显示的class名
-toTopClass | 回到顶部按钮的class名
-isRemoveAnimation | 是否移除类名随点击跟着跑的效果，默认为false
-autoHidden | 默认是否隐藏菜单，滑到第一层才出现，默认为false
-NavDivClass | 如果设置了autoHidden:true, 则需要设置导航菜单的class名
-speed | 滚动速度，默认为500
-DiyFun | 绑定自定义方法
+参数 | 描述 | 类型 | 默认值
+----|---|---|---
+floorClass | 对应DIV楼层的class名 | string |
+NavClass | 导航菜单的class名 | string |
+activeClass | 当前楼层需要高亮显示的class名 | string | 'active'
+toTopClass | 回到顶部按钮的class名 | string |
+scrollContent | 滑动容器的class名 | string | window
+isRemoveAnimation | 是否移除类名随点击跟着跑的效果 | boolean | false
+autoHidden | 默认是否隐藏菜单，滑到第一层才出现 | boolean | false
+NavDivClass | 如果设置了autoHidden:true, 则需要设置导航菜单的class名 | string |
+speed | 滚动速度 | number | 500
+DiyFun | 绑定自定义方法 | Function |
 
 例如：
 ```
@@ -40,6 +41,7 @@ var nav = new ElevatorNav({
     NavClass: "nav-ul li",  //电梯菜单的class名
     activeClass: "active",  //状态高亮的class名
     toTopClass: "toTop",    //回到顶部的class名
+    scrollContent: 'content',  //滑动容器的class名
     isRemoveAnimation: true,    //是否移除类名随点击跟着跑的效果，默认为false
     autoHidden: true,   //是否隐藏菜单，滑到第一层才出现，默认为false
     NavDivClass: "left-nav",    //需要默认隐藏菜单的class名

@@ -31,6 +31,7 @@ scrollContent | 滑动容器的class名 | string | window
 isRemoveAnimation | 是否移除类名随点击跟着跑的效果 | boolean | false
 autoHidden | 默认是否隐藏菜单，滑到第一层才出现 | boolean | false
 NavDivClass | 如果设置了autoHidden:true, 则需要设置导航菜单的class名 | string |
+offset | 滑动定位时需要偏移的数值 | number | 0
 speed | 滚动速度 | number | 500
 DiyFun | 绑定自定义方法 | Function |
 

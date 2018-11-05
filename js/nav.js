@@ -45,7 +45,7 @@ ElevatorNav.prototype = {
     floorHieght: function() {
         var me = this;
         for(let i = 0; i < me.config.floorClass.length; i++) {
-            me.config.floor[i] = $('.' + me.config.floorClass[i]).offset().top - 100;
+            me.config.floor[i] = $('.' + me.config.floorClass[i]).offset().top;
         }
     },
 
@@ -166,6 +166,7 @@ var nav = new ElevatorNav({
     autoHidden: true,   //是否隐藏菜单，滑到第一层才出现，默认为false
     NavDivClass: "left-nav",    //需要默认隐藏菜单的class名
     speed: 500,     //滚动速度，默认为500
+    offset: 0, //偏移值，滑动定位时需要偏移的数值
     //自定义绑定方法
     DiyFun: function(){
         console.log('自定义方法');

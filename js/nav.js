@@ -79,8 +79,8 @@ ElevatorNav.prototype = {
             if($(this).hasClass(me.config.toTopClass)) {
                 return;
             }
-            if(me.config.isRemoveAnimation == true) {
-                //在动画运动的过程中，不希望active-yellow特殊类名跟着满世界跑
+            if(me.config.isRemoveAnimation) {
+                //在动画运动的过程中，不希望active特殊类名跟着满世界跑
                 $(window).off('scroll', me.statusChange());
                 //因为你解绑了检测事件，当前这个LI具备特殊类名还要再书写一次
                 $(this).addClass(activeClass).siblings().removeClass(activeClass);  

@@ -15,7 +15,7 @@ demo效果预览：[https://zhouxingzu.github.io/ElevatorNav/](https://zhouxingz
 <script>
 var nav = new ElevatorNav({
     floorClass: ['floor1','floor2','floor3','floor4'],  //对应楼层的class名
-    NavClass: "nav-ul li",  //电梯菜单的class名
+    NavClass: "nav-item",  //电梯菜单的class名
     activeClass: "active",  //当前楼层高亮状态的class名
 })
 </script>
@@ -28,7 +28,7 @@ NavClass | 导航菜单的class名 | string |
 activeClass | 当前楼层需要高亮显示的class名 | string | 'active'
 toTopClass | 回到顶部按钮的class名 | string |
 scrollContent | 滑动容器的class名 | string | window
-isRemoveAnimation | 是否移除类名随点击跟着跑的效果 | boolean | false
+isRemoveAnimation | 是否移除类名随点击跟着跑的效果，注意如果使用此参数，滚动事件将会失效 | boolean | false
 autoHidden | 默认是否隐藏菜单，滑到第一层才出现 | boolean | false
 NavDivClass | 如果设置了autoHidden:true, 则需要设置导航菜单的class名 | string |
 offset | 滑动定位时需要偏移的数值 | number | 0
@@ -39,7 +39,7 @@ DiyFun | 绑定自定义方法 | Function |
 ```
 var nav = new ElevatorNav({
     floorClass: ['floor1','floor2','floor3','floor4'],  //楼层的class名
-    NavClass: "nav-ul li",  //电梯菜单的class名
+    NavClass: "nav-item",  //电梯菜单的class名
     activeClass: "active",  //状态高亮的class名
     toTopClass: "toTop",    //回到顶部的class名
     scrollContent: 'content',  //滑动容器的class名

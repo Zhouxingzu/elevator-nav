@@ -1,5 +1,5 @@
 # 电梯导航组件
-demo效果预览：[https://zhouxingzu.github.io/ElevatorNav/](https://zhouxingzu.github.io/ElevatorNav/)
+demo效果预览：[https://zhouxingzu.github.io/elevator-nav/](https://zhouxingzu.github.io/elevator-nav/)
 
 ### 使用方法
 #### 一、首先引入JS文件到HTML中（需要引入jquery）

@@ -1,23 +1,24 @@
 {
-  "name": "ElevatorNav",
+  "name": "elevator-nav",
   "version": "1.0.0",
   "description": "Component of Elevator navigation",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Zhouxingzu/ElevatorNav.git"
+    "url": "git+https://github.com/Zhouxingzu/elevator-nav.git"
   },
   "author": "Zhouxingzu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Zhouxingzu/ElevatorNav/issues"
+    "url": "https://github.com/Zhouxingzu/elevator-nav/issues"
   },
-  "homepage": "https://github.com/Zhouxingzu/ElevatorNav#readme",
+  "homepage": "https://github.com/Zhouxingzu/elevator-nav#readme",
   "dependencies": {
+    "jquery": "^3.5.1",
     "webpack": "^3.1.0"
   }
 }

@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="css/bulmaswatch.css">
 	<link rel="stylesheet" href="css/index.css">
 	<script src="js/jquery-3.2.1.min.js"></script>
 	<script src="js/nav.js"></script>
@@ -25,20 +26,19 @@
 		</ul>
 	</div>
 
-
 	<script>
 		var nav = new ElevatorNav({
-		    floorClass: ['floor1','floor2','floor3','floor4'],
-		    NavClass: "nav-ul li",
-		    activeClass: "active",
-		    toTopClass: "toTop",
-		    isRemoveAnimation: true,
-		    autoHidden: true,
-		    NavDivClass: "left-nav",
-		    speed: 500,
-		    DiyFun: function(){
-		    	console.log('自定义方法');
-		    }
+			floorClass: ['floor1','floor2','floor3','floor4'],
+			NavClass: "nav-ul li",
+			activeClass: "active",
+			toTopClass: "toTop",
+			isRemoveAnimation: true,
+			autoHidden: true,
+			NavDivClass: "left-nav",
+			speed: 500,
+			DiyFun: function(){
+				console.log('自定义方法');
+			}
 		})
 	</script>
 </body>

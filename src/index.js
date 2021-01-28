@@ -1,5 +1,5 @@
 /*!
- * elevator-nav 1.0.2
+ * elevator-nav 1.0.3
  * author: Zhouxingzu
  * https://github.com/Zhouxingzu/elevator-nav
  */
@@ -104,7 +104,7 @@
                 }
                     
                 //需要知道现在要往几层楼跳
-                var i = $(this).index();
+                var i = $(this).index('.' + NavClass);
                 for(let j = 0; j < me.config.floorClass.length; j++) {
                     if(i == j) {
                         $(me.scrollContent || 'html, body').stop().animate({'scrollTop': me.config.floor[j] - me.config.offset}, speed, function() {

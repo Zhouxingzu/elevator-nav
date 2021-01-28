@@ -1,6 +1,6 @@
 {
   "name": "elevator-nav",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Component of Elevator navigation",
   "main": "src/index.js",
   "scripts": {

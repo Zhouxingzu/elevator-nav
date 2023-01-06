@@ -16,7 +16,7 @@
     }
 }(this,function (jQuery) {
     let $ = jQuery;
-　　function ElevatorNav(config) {
+    function ElevatorNav(config) {
         var me = this;
         me.config = $.extend({
             floorClass: [],  //楼层的class名集合
@@ -104,7 +104,7 @@
                 }
                     
                 //需要知道现在要往几层楼跳
-                var i = $(this).index('.' + NavClass);
+                var i = $(this).index('.' + navClass);
                 for(let j = 0; j < me.config.floorClass.length; j++) {
                     if(i == j) {
                         $(me.scrollContent || 'html, body').stop().animate({'scrollTop': me.config.floor[j] - me.config.offset}, speed, function() {

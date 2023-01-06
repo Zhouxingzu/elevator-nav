@@ -3,10 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<link rel="stylesheet" href="css/bulmaswatch.css">
 	<link rel="stylesheet" href="css/index.css">
 	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="js/nav.js"></script>
+	<script src="src/index.js"></script>
 </head>
 <body>
 	<div class="top">Banner</div>
@@ -18,10 +17,10 @@
 
 	<div class="left-nav">
 		<ul class="nav-ul">
-			<li>Floor1</li>
-			<li>Floor2</li>
-			<li>Floor3</li>
-			<li>Floor4</li>
+			<li class="nav-item">Floor1</li>
+			<li class="nav-item">Floor2</li>
+			<li class="nav-item">Floor3</li>
+			<li class="nav-item">Floor4</li>
 			<li class="toTop">回到顶部</li>
 		</ul>
 	</div>
@@ -29,14 +28,14 @@
 	<script>
 		var nav = new ElevatorNav({
 			floorClass: ['floor1','floor2','floor3','floor4'],
-			NavClass: "nav-ul li",
+			navClass: "nav-item",
 			activeClass: "active",
 			toTopClass: "toTop",
 			isRemoveAnimation: true,
 			autoHidden: true,
-			NavDivClass: "left-nav",
+			navDivClass: "left-nav",
 			speed: 500,
-			DiyFun: function(){
+			diyFun: function(){
 				console.log('自定义方法');
 			}
 		})

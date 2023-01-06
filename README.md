@@ -9,19 +9,39 @@ npm install elevator-nav
 
 #### 二、引入使用：
 ```
+// html
+
+<div class="floor1">Floor1</div>
+<div class="floor2">Floor2</div>
+<div class="floor3">Floor3</div>
+<div class="footer">Footer</div>
+
+<div class="left-nav">
+    <ul class="nav-ul">
+        <li class="nav-item">Floor1</li>
+        <li class="nav-item">Floor2</li>
+        <li class="nav-item">Floor3</li>
+        <li class="toTop">回到顶部</li>
+    </ul>
+</div>
+```
+
+```
+// js
 import ElevatorNav from 'elevator-nav';
 
 var nav = new ElevatorNav({
-    floorClass: ['floor1','floor2','floor3','floor4'],  //对应楼层的class名
-    navClass: "nav-item",  //电梯菜单的class名
+    floorClass: ['floor1','floor2','floor3'],  //对应楼层的class名
+    navClass: "nav-item",   //电梯菜单的class名
     activeClass: "active",  //当前楼层高亮状态的class名
+    toTopClass: "toTop",    //回到顶部的class名
 })
 ```
 注：由于项目依赖jquery，所以请在渲染出DOM元素后再进行初始化
 #### 三、详细API文档说明
 参数 | 描述 | 类型 | 默认值
 ----|---|---|---
-floorClass | 对应DIV楼层的class名 | string |
+floorClass | 对应DIV楼层的class名 | string[] | []
 navClass | 导航菜单的class名 | string |
 activeClass | 当前楼层需要高亮显示的class名 | string | 'active'
 toTopClass | 回到顶部按钮的class名 | string |
@@ -32,6 +52,7 @@ navDivClass | 如果设置了autoHidden:true, 则需要设置导航菜单的clas
 offset | 滑动定位时需要偏移的数值 | number | 0
 speed | 滚动速度 | number | 500
 diyFun | 绑定自定义方法 | Function |
+
 
 例如：
 ```

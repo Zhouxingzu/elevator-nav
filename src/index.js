@@ -37,6 +37,9 @@
         this.scrollContent = me.config.scrollContent ? ('.' + me.config.scrollContent) : null;
         me.init();
     }
+    function errorLog(msg) {
+        console.error(msg);
+    }
     ElevatorNav.prototype = {
         constructor: ElevatorNav,
     
@@ -59,6 +62,9 @@
         //获取各楼层高度
         floorHieght: function() {
             var me = this;
+            if(me.config.floorClass.length <= 0) {
+                return errorLog('没有配置楼层数据');
+            }
             for(let i = 0; i < me.config.floorClass.length; i++) {
                 // 防止楼层错误
                 if(!$('.' + me.config.floorClass[i]).offset()) {return;}

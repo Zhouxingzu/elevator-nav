@@ -1,5 +1,5 @@
 /*!
- * elevator-nav 1.0.3
+ * elevator-nav 1.0.4
  * author: Zhouxingzu
  * https://github.com/Zhouxingzu/elevator-nav
  */
